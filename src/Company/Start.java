@@ -9,6 +9,22 @@ public class Start {
 
         Employee employee = Employee.createEmployee(scanner);
 
+        if (employee != null) {
+            employee.printDetails();
+
+            scanner.nextLine();
+
+            System.out.println("Bu calisana bir gorev atayin:");
+            String task = scanner.nextLine();
+            employee.assignTask(task);
+
+            System.out.println("Gorevi tamamlamak icin bir tusa basin...");
+            scanner.nextLine();
+            employee.completeTask();
+
+        }
+
+        scanner.close();
 
     }
 }

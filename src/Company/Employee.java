@@ -76,6 +76,7 @@ public abstract class Employee implements TaskHandler {
 
     public abstract void printDetails();
 
+
     public static Employee createEmployee(Scanner scanner) {
         System.out.println("Calisan Tipi Secen: \n1- Manager \n2- Developer  \n3- Office Assistant:");
         int type = scanner.nextInt();
@@ -94,17 +95,17 @@ public abstract class Employee implements TaskHandler {
         if (type == 1) {
             System.out.println("Ekip buyuklugu: ");
             int teamSize = scanner.nextInt();
-            return new Manager(name, surname, salary, teamSize);
+            return new Manager(name, surname, salary, position,teamSize);
 
         } else if (type == 2) {
             System.out.println("Uzmanlik alani: ");
             String expertise = scanner.nextLine();
-            return new Developer(name, surname, salary, expertise);
+            return new Developer(name, surname, salary, position, expertise);
 
         } else if (type == 3) {
             System.out.println("Kac tane officeten sorumlu: ");
             int officeResponsibility = scanner.nextInt();
-            return new OfficeAssistant(name, surname, salary, officeResponsibility);
+            return new OfficeAssistant(name, surname, salary, position, officeResponsibility);
 
         } else {
             System.out.println("Gecersiz secim!");
